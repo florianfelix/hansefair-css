@@ -1,41 +1,82 @@
 <?php
+
 /**
- * Plugin Name: Hansefair Plugin
- * Plugin URI: https://github.com/florianfelix/hansefair-plugin
- * Description: Hansefair-Markisen Produkt Konfigurator
- * Version: 0.0.1
- * Author: Florian Meyer
- * Author URI: https://github.com/florianfelix
- * Licence: MIT
- * Text Domain: hansefair-plugin
+ * The plugin bootstrap file
  *
- * @category Woocommerce_Plugin
- * @package  Hansefair
- * @author   Florian Meyer <florianfelixmeyer@gmail.com>
- * @license  MIT https://github.com/florianfelix
- * @link     https://github.com/florianfelix
+ * This file is read by WordPress to generate the plugin information in the plugin
+ * admin area. This file also includes all of the dependencies used by the plugin,
+ * registers the activation and deactivation functions, and defines a function
+ * that starts the plugin.
+ *
+ * @link              https://github.com/florianfelix
+ * @since             1.0.0
+ * @package           Hansefair
+ *
+ * @wordpress-plugin
+ * Plugin Name:       Hansefair Custom
+ * Plugin URI:        https://github.com/florianfelix/hansefair
+ * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Version:           1.0.0
+ * Author:            Florian Felix Meyer
+ * Author URI:        https://github.com/florianfelix
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       hansefair
+ * Domain Path:       /languages
  */
 
-defined('ABSPATH') || die('funny');
-
-if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
-    require_once dirname(__FILE__) . '/vendor/autoload.php';
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
 }
 
+/**
+ * Currently plugin version.
+ * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Rename this for your plugin and update it as you release new versions.
+ */
+define( 'HANSEFAIR_VERSION', '1.0.0' );
 
-function activate_hanseconf() {
-    Inc\Base\Activate::activate();
+/**
+ * The code that runs during plugin activation.
+ * This action is documented in includes/class-hansefair-activator.php
+ */
+function activate_hansefair() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-hansefair-activator.php';
+	Hansefair_Activator::activate();
 }
-register_activation_hook( __FILE__, 'activate_hanseconf' );
 
-
-function deactivate_hanseconf() {
-    Inc\Base\Deactivate::deactivate();
+/**
+ * The code that runs during plugin deactivation.
+ * This action is documented in includes/class-hansefair-deactivator.php
+ */
+function deactivate_hansefair() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-hansefair-deactivator.php';
+	Hansefair_Deactivator::deactivate();
 }
-register_deactivation_hook( __FILE__, 'deactivate_hanseconf' );
 
+register_activation_hook( __FILE__, 'activate_hansefair' );
+register_deactivation_hook( __FILE__, 'deactivate_hansefair' );
 
+/**
+ * The core plugin class that is used to define internationalization,
+ * admin-specific hooks, and public-facing site hooks.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-hansefair.php';
 
-if (class_exists('Inc\\Init')) {
-    Inc\Init::register_services();
+/**
+ * Begins execution of the plugin.
+ *
+ * Since everything within the plugin is registered via hooks,
+ * then kicking off the plugin from this point in the file does
+ * not affect the page life cycle.
+ *
+ * @since    1.0.0
+ */
+function run_hansefair() {
+
+	$plugin = new Hansefair();
+	$plugin->run();
+
 }
+run_hansefair();
