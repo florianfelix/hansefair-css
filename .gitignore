@@ -1,0 +1,8 @@
+.env
+node_modules/
+.vscode
+vendor/
+*.map
+.parcel-cache/
+.cache/
+
