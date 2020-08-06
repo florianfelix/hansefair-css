@@ -1,2 +1,2 @@
 import '../css/hansefair.sass';
-console.log('HELLO');
+console.log('HELLO USER');

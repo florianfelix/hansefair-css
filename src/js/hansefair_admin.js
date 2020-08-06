@@ -1,7 +1,7 @@
 import '../css/hansefair_admin.sass';
 
 window.addEventListener("load", function() {
-    console.log('ADMIN');
+    console.log('HELLO ADMIN');
     
     var tabs = this.document.querySelectorAll("ul.nav-tabs > li");
 
