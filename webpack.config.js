@@ -15,8 +15,8 @@ module.exports = {
         path: path.resolve(__dirname, 'assets'),
         filename: '[name].js',
     },
-    devtool: 'source-map',
-    // devtool: 'inline-source-map',
+    // devtool: 'source-map',
+    devtool: 'inline-source-map',
 
     module: {
         rules: [
