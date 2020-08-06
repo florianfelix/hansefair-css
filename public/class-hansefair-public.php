@@ -73,7 +73,7 @@ class Hansefair_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . '/assets/hansefair.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__, 1 ) . 'assets/hansefair.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +96,7 @@ class Hansefair_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . '/assets/hansefair.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/hansefair.js', array( 'jquery' ), $this->version, false );
 
 	}
 
