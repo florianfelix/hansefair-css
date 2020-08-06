@@ -1,0 +1,216 @@
+
+.tbl-responsive
+  display: flex
+  flex-direction: column
+  width: auto
+  margin: .5em
+  //padding-bottom: 1em
+  border: 3px solid lightgrey
+  border-radius: 20px
+
+  .tbl-headers
+    border-bottom: 3px solid black
+    //margin: .5em
+    font-weight: bold
+    font-size: 1.4em
+    text-align: center
+
+    .tbl-column
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      //padding: 1em
+      margin-top: 1em
+      margin-bottom: .5em
+      //background: green
+      .tbl-item
+        //min-width: 180px
+        //background: red
+        //flex-grow: 1
+        padding: .1em
+        border-right: 1px solid #ddd
+        flex-basis: 20%
+        //border-radius: 10px
+        a
+          text-decoration: none
+          color: black
+          cursor: pointer
+        a:hover
+          text-decoration: underline
+      .tbl-item:nth-child(even)
+        //background: rgba(0,0,0,.15)
+
+
+  .tbl-content
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    .tbl-cats
+      font-weight: bold
+    .tbl-column
+      //border-right: 1px solid #ddd
+      //.tbl-itemfiller
+        display: none
+      flex-basis: 20%
+      .tbl-itemtitle
+        display: none
+
+      .tbl-itemwrapper
+        display: flex
+        text-align: center
+        min-width: 180px
+        height: 2.8em
+        padding: .1em
+        //border-bottom: 1px solid #ddd
+        .tbl-item
+          position: relative
+          //z-index: 0
+          flex-grow: 1
+          align-self: center
+          //border: 1px solid #ddd
+          border-bottom: 1px solid #ddd
+          padding: .5em
+        .tbl-price
+          font-weight: bold
+        .tbl-price:hover
+          font-size: 1.4em
+          transition: .2s
+        .tbl-yes
+          //position: relative
+          //z-index: 0
+          background: lightgreen
+          background: url("https://hansefair-markisen.de/wp-content/uploads/table/gruener_circle.svg")
+          background-repeat: no-repeat
+          background-origin: padding-box
+          background-position: 50%
+          background-size: 2.1em
+          color: white
+          font-weight: bold
+        .tbl-yes:hover
+          //background-size: 0em
+          //color: black
+          //font-size: 1.2em
+          //transition: .5s
+        .tbl-opt
+          background: lightgreen
+          background: url("https://hansefair-markisen.de/wp-content/uploads/table/yellow_circle.svg")
+          background-repeat: no-repeat
+          background-origin: padding-box
+          background-position: 50%
+          background-size: 4.5em
+          color: black
+          //font-weight: bold
+
+        .tbl-no
+          background: lightgreen
+          background: url("https://hansefair-markisen.de/wp-content/uploads/table/red_circle.svg")
+          background-repeat: no-repeat
+          background-origin: padding-box
+          background-position: 50%
+          background-size: 4.5em
+          color: white
+          font-weight: bold
+        .tbl-itemheader
+          display: none
+      .tbl-itemwrapper:nth-child(even)
+        background: rgba(0,0,0,.02)
+
+    .tbl-column:nth-child(even)
+      background: rgba(0,0,0,.05)
+
+@media (max-width: 950px)
+  .tbl-responsive
+    //max-width: 480px
+    width: auto
+    max-width: 800px
+    flex-direction: row
+    justify-content: space-around
+
+    .tbl-headers
+      display: none
+
+    .tbl-content
+      flex-direction: column
+      flex-grow: 1
+      margin: .5em
+      .tbl-cats
+        display: none
+      .tbl-column
+        margin-bottom: 1em
+        border: 1px solid black
+        border-radius: 20px 20px 0px 0px
+        // Fix for Safari Column Bug
+        flex: 1 0 auto !important
+        .tbl-itemwrapper:nth-child(even)
+          background: rgba(0,0,0,.05)
+        .tbl-itemtitle
+          display: block
+          background: grey
+          text-align: center
+          padding: 1em
+          font-size: 2em
+          border-radius: 20px 20px 0px 0px
+          a
+            text-decoration: none
+            color: white
+          a:hover
+            text-decoration: underline
+        .tbl-itemwrapper
+          border-bottom: 1px solid #ddd
+          display: flex
+          flex-direction: row
+          justify-content: space-around
+          align-items: center
+          padding: .2em
+          width: auto
+
+          .tbl-itemheader
+            display: block
+            width: 40%
+          .tbl-item
+            margin-left: 1em
+            width: 60%
+            border-bottom: none
+
+
+/* Add this attribute to the element that needs a tooltip */
+[tbl-tooltip]
+  position: relative
+  z-index: 2
+  //cursor: pointer
+
+/* Hide the tooltip content by default */
+[tbl-tooltip]:before,
+[tbl-tooltip]:after
+  visibility: hidden
+  opacity: 0
+  pointer-events: none
+
+/* Position tooltip above the element */
+[tbl-tooltip]:before
+  position: absolute
+  //z-index: 1
+  bottom: 110%
+  //top: 100%
+  left: 0%
+  //margin-bottom: 5px
+  margin-left: 0px
+  padding: 1em
+  min-width: 91%
+  //width: 300%
+  border-radius: 3px
+  //background-color: #000
+  background-color: hsla(0, 0%, 20%, 0.9)
+  color: #fff
+  content: attr(tbl-tooltip)
+  text-align: center
+  font-weight: normal
+  font-size: .9em
+  line-height: 1.5
+
+/* Show tooltip content on hover */
+[tbl-tooltip]:hover:before,
+[tbl-tooltip]:hover:after
+  visibility: visible
+  opacity: 1
+  transition: opacity .5s

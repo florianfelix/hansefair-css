@@ -1,0 +1,44 @@
+@import '../utils/hansevars'
+$textcol: rgba(1,1,1,.6)
+$textcol2: darkorange
+
+$col1: darkorange
+$col2: orange
+
+$col3: darkgrey
+$col4: lightgrey
+
+
+
+.wp-angebotsanim1
+  position: relative
+  max-width: 678px
+  margin: 0 auto
+  overflow: hidden
+  img
+    width: 100%
+    height: auto
+  >.infobox1
+    animation: anim1 10s ease-out forwards infinite
+    position: absolute
+    left: 0
+    bottom: 7%
+    max-width: 70%
+    background: rgba(white, 1)
+    background: linear-gradient(to right, white, rgba(white, .8))
+    color: black
+    font-weight: bold
+
+
+
+@keyframes anim1
+  0%
+    left: -100%
+  10%
+    left: 0%
+  80%
+    opacity: 1
+  90%
+    opacity: 0
+  100%
+    opacity: 0

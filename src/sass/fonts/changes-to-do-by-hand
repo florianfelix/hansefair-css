@@ -1,0 +1,6 @@
+change font-paths in styles.scss to:
+
+/shop/templates/Honeygrid2/fonts/hm-icons/
+
+
+comment out line-height

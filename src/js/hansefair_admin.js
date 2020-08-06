@@ -1,4 +1,4 @@
-import '../css/hansefair_admin.sass';
+import '../sass/admin.scss';
 
 window.addEventListener("load", function() {
     console.log('HELLO ADMIN');

@@ -1,0 +1,102 @@
+@import '../utils/hansevars'
+
+$col1: rgb(.9, .9, .9)
+$col2: rgb(.95, .95, .95)
+
+
+
+.image-card
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: stretch
+  flex-basis: 33%
+  box-sizing: border-box
+  margin: 5px auto
+  max-width: 342px
+  min-width: 250px
+  width: 100%
+  // height: auto
+  background: white
+  border: solid 4px rgba(0,0,0,.1)
+  transition: all 1s
+
+  >.price
+    position: absolute
+    font-size: 18px
+    font-weight: bold
+    background: rgba($hm-blue, 0.8)
+    color: orange
+    padding: 4px 8px
+    border-bottom-right-radius: 10px
+    border-bottom: 2px solid white
+    border-right: 2px solid white
+
+  >img
+    align-self: center
+    min-width: 100%
+    margin: 0
+    padding: 0
+
+  >.image-card-center
+    padding: 0 10px
+    margin-top: 5px
+    margin-bottom: 5px
+    // This produces a bug in Safari
+    // height: 100%
+    ul
+      list-style: none
+      padding: 0 10px
+      margin: 0
+    >h5
+      margin: 5px 0 !important
+
+  >div:first-of-type
+    flex-direction: column
+    justify-content: space-between
+    >.image-card-title
+      align-self: flex-start
+      padding-top: 4px
+      margin-bottom: 4px
+      font-size: 18px
+      font-weight: bolder
+    >*
+      padding: 0 10px
+      margin: 0
+    >h1
+      padding-top: 6px
+      margin-bottom: 4px
+      font-size: 18px
+      font-weight: bolder
+
+  >a:hover, >a:visited, .image-card-link
+    text-decoration: none
+  >a, .image-card-link
+    width: 100%
+    color: white
+    >div
+      background: linear-gradient(to top, $shdw4, $shdw4, $shdw3, $shdw4)
+      text-align: left
+      font-size: 1.1em
+      font-weight: bolder
+      padding: 5px 0
+      padding-left: 10px
+      .fa
+        color: white
+        font-size: 18px
+        transform: translateY(1px)
+    >div:hover
+      background: $hm-blue
+      color: lightgrey
+      color: white
+      .fa
+        color: white
+
+@media only screen and (max-width: 1076px)
+  .image-card
+    max-width: 228px
+@media only screen and (max-width: 724px)
+  .image-card
+    max-width: 100%
+    flex-basis: 100%

@@ -1,0 +1,119 @@
+@import '../utils/hansevars'
+
+.pbox_container
+  max-width: 720px
+  margin: 0 auto
+  font-size: 14px
+  font-family: "Helvetica"
+  box-shadow: 0 0 15px rgba(0,0,0,0.2)
+  background: linear-gradient(to right, lightgrey, white)
+  border-radius: 20px
+  display: flex
+  flex-direction: column
+  margin-bottom: 15px
+  opacity: 0.9
+
+.pbox_container:hover
+  opacity: 1
+
+.pbox_content_container
+  background: white
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: stretch
+  border-bottom-left-radius: 20px
+  border-bottom-right-radius: 20px
+
+.pbox_feature_container
+  background: white
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  border-bottom-left-radius: 20px
+  border-bottom-right-radius: 20px
+
+.pbox_feature
+  display: flex
+  align-items: flex-start
+
+.pbox_feature:hover .pbox_boxhaken
+  transition: filter .4s ease-out
+  filter: drop-shadow(0px 0px 5px rgba(0,0,0,.3))
+
+.pbox_boxhaken
+  min-width: 40px
+  margin-top: 6px
+  margin-left: 10px
+  transition: filter .1s ease-in
+
+.pbox-icon
+  margin-left: 10px
+  opacity: .9
+
+.pbox-icon:hover
+  opacity: 1
+
+.pbox_titletext
+  margin: 10px
+  padding-left: 6px
+
+.pbox_title_title
+  margin-top: 5px
+  margin-bottom: 0px
+  font-size: 28px
+  font-weight: bold
+  color: darkblue
+  transition: all .5s ease-in-out
+
+.pbox_title_title:hover
+  transition: all .3s ease-in-out
+  filter: drop-shadow(0px 0px 6px white)
+  color: black
+
+.pbox_title_body
+  margin-top: 2px
+  margin-bottom: 0px
+  margin: 3px
+  font-size: 16px
+
+.pbox_feature
+  flex-grow: 1
+
+.pbox_featuretext
+  margin: 0px
+  padding-left: 6px
+
+.pbox_feature_title
+  margin-top: 5px
+  margin-bottom: 0px
+  font-size: 18px
+  font-weight: bold
+  line-height: 100%
+  transition: color .5s ease-in-out
+
+.pbox_feature_title:hover
+  transition: color .2s ease-in-out
+  color: darkblue
+
+.pbox_feature_body
+  margin-top: 0px
+  margin-bottom: 3px
+
+.pbox_image_container
+  background: white
+  align-self: flex-end
+  border-bottom-left-radius: 20px
+  border-bottom-right-radius: 20px
+
+.pbox_image
+  border-bottom-left-radius: 20px
+  border-bottom-right-radius: 20px
+  width: auto
+  height: 100%
+  max-width: 250px
+  max-height: 200px
+
+@media (max-width: 767px)
+  .pbox_container
+    max-width: 300px

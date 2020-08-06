@@ -1,0 +1,101 @@
+@import '../utils/hansevars'
+
+.ff-bgimage-container
+  position: relative
+
+.ff-herobox
+  z-index: 0
+  box-shadow: $box-drop-shadow
+  margin: 0 auto
+  margin-top: 14px
+  border-radius: $box-border-radius
+  max-width: $hm-product-width
+  border: $box-border
+
+  .ff-bgimage
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    opacity: .4
+    width: 100%
+    height: 100%
+    max-width: 100%
+    border-radius: $box-border-radius
+    overflow: hidden
+    background-size: cover
+    background-position: center center
+
+  .ff-herobox-title
+    position: inherit
+    background: $box-title-gradient
+    z-index: 300
+    padding: $box-padding
+    padding-bottom: 5px
+    border-top-left-radius: $box-border-radius
+    border-top-right-radius: $box-border-radius
+
+    h1
+      font-size: $box-title-size
+      font-weight: bold
+      margin: 0
+      margin-bottom: 10px
+
+  .ff-herobox-list
+    ul
+      position: inherit
+      z-index: 400
+      margin: 0
+      padding: 0
+      padding-bottom: 10px
+      padding-top: 10px
+      padding-left: 16px
+      list-style: none
+      display: inline-block
+
+      li
+        float: left
+        clear: left
+        padding: 0
+        padding-bottom: 2px
+        padding-top: 2px
+
+
+        .ff-imagepoint
+          display: flex
+          justify-content: flex-start
+          align-items: center
+          border-radius: 30px
+          background: $hm-highlight-gradient
+          padding-right: 16px
+          color: white
+          font-size: 16px
+          font-weight: bold
+          border: solid 2px white
+          i
+            margin-left: 8px
+          img
+            margin-left: 0
+            padding-right: 0
+            height: 40px
+            width: 40px
+          div
+            padding-left: 6px
+
+  .ff-thomas-andi-bottom-right
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 50%
+
+@media only screen and (max-width: $hm-mobile-width)
+  .ff-herobox
+    .ff-herobox-list
+      ul
+        li
+          .ff-imagepoint
+            font-size: 12px
+
+    .ff-thomas-andi-bottom-right
+      width: 50%
+      z-index: -1

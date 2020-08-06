@@ -1,2 +1,2 @@
-import '../css/hansefair.sass';
+import '../sass/public.scss';
 console.log('HELLO USER');
