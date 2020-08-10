@@ -6,3 +6,4 @@ vendor/
 .parcel-cache/
 .cache/
 dest/wp-content
+dump/
