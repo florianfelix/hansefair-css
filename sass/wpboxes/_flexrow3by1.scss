@@ -11,6 +11,9 @@
 
 .image-box {
     max-width: 300px;
+    .topleft {
+        color: red;
+    }
     div.relative {
         max-height: 300px;
         overflow: hidden;
