@@ -65,7 +65,7 @@ gulp.task('script', function (done) {
 
 //Task style
 gulp.task('sass', function () {
-	return gulp.src(['./sass/**/*.scss'], { since: gulp.lastRun('sass') })
+	return gulp.src(['./sass/**/*.+(scss|sass)'], { since: gulp.lastRun('sass') })
 		.pipe(plumber({
 			errorHandler: notify.onError("Error: <%= error.message %>")
 		}))
@@ -144,7 +144,7 @@ gulp.task('default', function () {
 	})
 	gulp.watch('./src/**/*.js', gulp.series(['script']));
 	gulp.watch('./html/**/*.html', gulp.series(['html']));
-	gulp.watch('./sass/**/*.scss', gulp.series(['sass']));
+	gulp.watch('./sass/**/*.+(scss|sass)', gulp.series(['sass']));
 	gulp.watch('./images/**/*.+(png|jpg|jpeg|gif|svg|ico)', gulp.series(['image']));
 })
 
