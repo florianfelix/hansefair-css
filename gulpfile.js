@@ -48,7 +48,7 @@ let sourcejs = [
 ]
 
 gulp.task('clean', function(){
-	return del(['dest/**'], {force:true});
+	return del(['dest/**', '!dest/wp-content'], {force:true});
 });
 
 //Task script
