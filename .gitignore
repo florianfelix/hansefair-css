@@ -5,4 +5,4 @@ vendor/
 *.map
 .parcel-cache/
 .cache/
-
+dest/wp-content
