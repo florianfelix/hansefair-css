@@ -1,0 +1,32 @@
+
+$primary: rgb(255, 145, 0);
+$primary-darker: darken($primary, 5);
+$primary-lighter: lighten($primary, 10);
+
+$secondary: rgb(236, 98, 6);
+$secondary-darker: darken($secondary, 5);
+$secondary-lighter: lighten($secondary, 10);
+
+
+
+.bg-primary {
+    background: $primary;
+}
+.bg-primary-darker {
+    background: $primary-darker;
+}
+.bg-primary-lighter {
+    background: $primary-lighter;
+}
+
+
+
+.bg-secondary {
+    background: $secondary;
+}
+.bg-secondary-darker {
+    background: $secondary-darker;
+}
+.bg-secondary-lighter {
+    background: $secondary-lighter;
+}

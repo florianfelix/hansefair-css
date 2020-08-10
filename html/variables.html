@@ -1,0 +1,33 @@
+@@include('header._html')
+
+<style>
+    .color-variables {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .color-variable {
+        width: 100%;
+        min-width: 100px;
+        height: 80px;
+        text-align: center;
+    }
+</style>
+
+<div class="color-variables">
+    <div class="color-variable bg-primary-darker">$primary-darker</div>
+    <div class="color-variable bg-primary">$primary</div>
+    <div class="color-variable bg-primary-lighter">$primary-lighter</div>
+</div>
+
+
+<div class="color-variables">
+    <div class="color-variable bg-secondary-darker">$secondary-darker</div>
+    <div class="color-variable bg-secondary">$secondary</div>
+    <div class="color-variable bg-secondary-lighter">$secondary-lighter</div>
+</div>
+
+
+
+
+@@include('footer._html')
