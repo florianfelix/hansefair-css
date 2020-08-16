@@ -67,8 +67,9 @@
     list-style: none;
     padding: 0;
     margin: 8px 0;
-    margin-left: 0;
+    // margin-left: 0;
     li {
+        margin-left: 0;
         margin: 4px 0;
     }
 }
