@@ -84,4 +84,7 @@
         border-bottom-right-radius: 40px;
         border-top-right-radius: 4px;
     }
+    li:nth-child(odd) {
+        background: $secondary-darker;
+    }
 }
