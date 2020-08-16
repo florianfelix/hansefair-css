@@ -1,9 +1,18 @@
+/* Color Theme Swatches in Hex */
+$My-Color-Theme-1-hex: #492106;
+$My-Color-Theme-2-hex: #ff8331;
+$My-Color-Theme-3-hex: #D16B28;
+$My-Color-Theme-4-hex: #007E85;
+$My-Color-Theme-5-hex: #28C9D1;
 
-$primary: rgb(255, 145, 0);
+
+// $primary: rgb(236, 98, 6);
+$primary: $My-Color-Theme-2-hex;
 $primary-darker: darken($primary, 5);
+$primary-darkest: darken($primary, 15);
 $primary-lighter: lighten($primary, 10);
 
-$secondary: rgb(236, 98, 6);
+$secondary: $My-Color-Theme-3-hex;
 $secondary-darker: darken($secondary, 5);
 $secondary-lighter: lighten($secondary, 10);
 
